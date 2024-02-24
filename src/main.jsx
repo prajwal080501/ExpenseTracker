@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Auth from './pages/Auth.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 import Layout from './layouts/Layout.jsx';
+import { PopupProvider } from './context/PopupContext.jsx';
 
 
 const router = createBrowserRouter([
@@ -30,6 +31,8 @@ const router = createBrowserRouter([
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <PopupProvider>
+      <RouterProvider router={router} />
+    </PopupProvider>
   </React.StrictMode>,
 )
